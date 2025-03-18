@@ -3,7 +3,7 @@
 using namespace std;
 class Operator{
   public:
-  virtual eval(Operator a; Operator b) = 0;
+  virtual int eval(Operator a; Operator b) = 0;
 };
 class Num_Op: public Operator{
   public:
