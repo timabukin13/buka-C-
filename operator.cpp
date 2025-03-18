@@ -3,40 +3,54 @@
 using namespace std;
 class Operator{
   public:
-  virtual int eval(Operator a; Operator b) = 0;
+  virtual double eval() = 0;
 };
 class Num_Op: public Operator{
+  private:
+  double num;
   public:
-  int eval(int a) override{
-    return a;
+  double eval() override{
+    return num;
   }
 };
 
 class Sum_Op: public Operator{
+  private:
+    Operator*left;
+    Operator*right;
   public:
-  int eval(int a; int b) override{
-    return a + b;
+  double eval() override{
+    return left -> eval() + right -> eval();
   }
 };
 
 class Min_Op: public Operator{
+  private:
+    Operator*left;
+    Operator*right;
   public:
-  int eval(int a; int b) override{
-    return a - b;
+  double eval() override{
+    return left -> eval() - right -> eval();
   }
 };
 
 class Mul_Op: public Operator{
+  private:
+    Operator*left;
+    Operator*right;
   public:
-  int eval(int a; int b) override{
-    return a * b;
+  double eval() override{
+    return left -> eval() * right -> eval();
   }
 };
 
 class Dev_Op: public Operator{
+  private:
+    Operator*left;
+    Operator*right;
   public:
-  int eval(int a; int b) override{
-    return a / b;
+  double eval() override{
+    return left -> eval() / right -> eval();
   }
 };
 
