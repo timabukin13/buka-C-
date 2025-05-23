@@ -29,7 +29,7 @@ int main() {
     cout << "Введите строку: ";
     cin >> input;
     vector<char> bytes = conv(input);
-    cout << "\n В виде символов:     ";
+    cout << "В виде символов:     ";
     for (auto b : bytes){
     cout << static_cast<char>(b);
     }
